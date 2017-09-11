@@ -428,3 +428,13 @@ def fixShopNumber(rPath):
                                 sPath, file[:22] + shopOk + file[25:]))
     except Exception as e:
         print e
+
+
+def trash(rPath):
+    listaDir = os.listdir(os.path.join(rPath, 'data'))
+    for linea in listaDir:
+        linea.strip()
+        if "OLD" in linea:
+            shutil.move(os.path.join(rPath, 'data'), './trash')
+
+    pass
